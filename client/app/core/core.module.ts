@@ -6,6 +6,9 @@ import 'ngstorage';
 import 'angular-resource';
 import 'angular-messages';
 
+// SVC
+import {PostServiceModule} from '../services/post.service';
+
 // LIB non injectable
 import '../../../node_modules/animate.css/animate.css';
 import '../../../node_modules/font-awesome/scss/font-awesome.scss';
@@ -20,6 +23,7 @@ export default angular.module('app.core', [
   'toastr',
   coreConstants,
   coreFilters,
-  authInterceptor
+  authInterceptor,
+  PostServiceModule
 ])
 .name;

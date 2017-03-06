@@ -18,6 +18,7 @@ import {cookieList} from './lib/dev';
 // routes
 import * as user from './api/user';
 import * as auth from './api/auth';
+import * as post from './api/post.api';
 
 // models
 import {User} from './models/User';
@@ -113,6 +114,7 @@ app.use('/', routes);
 // apis
 app.use('/api', user);
 app.use('/api', auth);
+app.use('/api', post);
 
 // THIS IS THE INTERCEPTION OF ALL OTHER REQ
 // After server routes / static / api

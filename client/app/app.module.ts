@@ -10,6 +10,9 @@ import LayoutComponent from './layout/layout.module';
 import HomeComponent from './home/home.module';
 import AuthComponent from './auth/auth.module';
 
+// LOW LEVEL COMPONENTS
+import NewPostComponent from './components/newPost.module';
+
 const name = 'app';
 const dependencies = [
   'ui.router',
@@ -18,7 +21,8 @@ const dependencies = [
   HomeComponent,
   LayoutComponent,
   AuthComponent,
-  UserServiceModule
+  UserServiceModule,
+  NewPostComponent
 ];
 
 angular.module(name, dependencies)
