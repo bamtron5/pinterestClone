@@ -1,6 +1,8 @@
 @import 'variables/superhero.scss';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
+@import '../app/post/post.scss';
+
 .cursor:hover {
   cursor: pointer;
 }

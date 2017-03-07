@@ -5,7 +5,6 @@ import authInterceptor from './interceptor.factory';
 import 'ngstorage';
 import 'angular-resource';
 import 'angular-messages';
-
 // SVC
 import {PostServiceModule} from '../services/post.service';
 
@@ -15,6 +14,8 @@ import '../../../node_modules/font-awesome/scss/font-awesome.scss';
 import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/angular-toastr/dist/angular-toastr.tpls.js';
 import '../../../node_modules/angular-toastr/dist/angular-toastr.css';
+let Masonry = require('masonry-layout');
+window['Masonry'] = Masonry;
 
 export default angular.module('app.core', [
   'ngResource',

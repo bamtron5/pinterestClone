@@ -15,6 +15,9 @@
     "no-var-keyword": false,
     "no-shadowed-variable": false,
     "no-empty": false,
-    "variable-name": false
+    "variable-name": false,
+    "member-access": false,
+    "max-line-length": false,
+    "no-trailing-whitespaces": false
   }
 }

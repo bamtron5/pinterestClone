@@ -23,6 +23,11 @@ class HomeController {
         this.toastr.error('Post retrieval failed', ':(');
       });
   }
+
+  public newPost (post) {
+    this.posts.unshift(post);
+    // closeModal
+  }
 }
 
 HomeController.$inject = [

@@ -11,7 +11,8 @@ import HomeComponent from './home/home.module';
 import AuthComponent from './auth/auth.module';
 
 // LOW LEVEL COMPONENTS
-import NewPostComponent from './components/newPost.module';
+import NewPostComponent from './newPost/newPost.module';
+import postDirective from './post/post.module';
 
 const name = 'app';
 const dependencies = [
@@ -22,7 +23,8 @@ const dependencies = [
   LayoutComponent,
   AuthComponent,
   UserServiceModule,
-  NewPostComponent
+  NewPostComponent,
+  postDirective
 ];
 
 angular.module(name, dependencies)
