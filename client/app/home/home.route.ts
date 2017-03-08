@@ -3,7 +3,16 @@ const route = function route($stateProvider) {
     .state('home', {
       parent: 'main',
       url: '/',
-      template: '<home></home>'
+      template: '<home></home>',
+      resolve: {
+        setToken: ['$location', '$localStorage', ($location, $localStorage) => {
+          // Validate SESSION to TOKEN API
+          let token = $location.search().token;
+          return token && !$localStorage['token']
+            ? ($localStorage.token = token) && ($location.search('') && $location.search({}))
+            : null;
+        }]
+      }
     });
 };
 

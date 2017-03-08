@@ -13,17 +13,13 @@ import * as morgan from 'morgan';
 import * as passport from 'passport';
 import * as path from 'path';
 import routes from './routes';
+import {User} from './models/User';
 import {cookieList} from './lib/dev';
 
 // routes
 import * as user from './api/user';
 import * as auth from './api/auth';
 import * as post from './api/post.api';
-
-// models
-import {User} from './models/User';
-
-// seeds
 
 // replacing deprecated promise
 (<any> mongoose).Promise = global.Promise;
@@ -50,20 +46,17 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('mongoose connected');
     configPassport();
-    if (isDev) {
-
-      User.findOne({username: 'admin'}, (err, user) => {
-        if (err) return;
-        if (user) return;
-        if (!user)
-          var admin = new User();
-          admin.email = process.env.ADMIN_EMAIL;
-          admin.username = process.env.ADMIN_USERNAME;
-          admin.setPassword(process.env.ADMIN_PASSWORD);
-          admin.roles = ['user', 'admin'];
-          admin.save();
-      });
-    }
+    User.findOne({username: 'admin'}, (err, user) => {
+      if (err) return;
+      if (user) return;
+      if (!user)
+        var admin = new User();
+        admin.email = process.env.ADMIN_EMAIL;
+        admin.username = process.env.ADMIN_USERNAME;
+        admin.setPassword(process.env.ADMIN_PASSWORD);
+        admin.roles = ['user', 'admin'];
+        admin.save();
+    });
   }).catch((e) => {
     console.log(e);
   });

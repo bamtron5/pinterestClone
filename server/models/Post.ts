@@ -9,7 +9,7 @@ export interface IPost extends mongoose.Document {
 
 let PostSchema = new mongoose.Schema({
   comment: { type: String, max: 160, min: 0 },
-  image: { type: String },
+  image: { type: String, required: true },
   owner: { type: String },
   date: Date
 });
