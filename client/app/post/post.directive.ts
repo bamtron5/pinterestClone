@@ -1,9 +1,4 @@
 import * as angular from 'angular';
-// main.js
-
-// var msnry = new Masonry( '.grid', {
-//   // options...
-// });
 
 export const postDirective = function postDirective () {
   return {

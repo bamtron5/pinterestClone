@@ -6,9 +6,6 @@ import {isSession, hasRole} from '../lib/auth';
 let router = express.Router();
 
 router.get('/post',
-  isSession,
-  passport.authenticate('jwt'),
-  guard(['post:delete']),
   (req, res, next) => {
     Post.find()
       .sort({date: -1})

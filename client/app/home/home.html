@@ -1,8 +1,9 @@
+
 <h1>{{vm.title}}</h1>
 <h4 ng-if="vm.user.username">Hello, {{vm.user.username}}</h2>
 
 <new-post on-success="vm.newPost(post)"></new-post>
 
-<div class="grid">
-  <div ng-repeat="post in vm.posts track by $index" post="post"></div>
+<div class="grid well" ng-style="{opacity: vm.done ? 1 : 0}">
+  <div ng-repeat="post in vm.posts track by $index" post="post" repeat-done="vm.startMasonry()"></div>
 </div>

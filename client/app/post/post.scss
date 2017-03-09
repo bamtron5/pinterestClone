@@ -3,6 +3,7 @@ post, *[post] {
     padding: 10px;
     background: $gray-base;
     border: 1px solid $gray-lighter;
+    width:225px;
 
     > img {
       max-width: 180px;

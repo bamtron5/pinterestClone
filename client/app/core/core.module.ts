@@ -8,6 +8,9 @@ import 'angular-messages';
 // SVC
 import {PostServiceModule} from '../services/post.service';
 
+// directives
+import repeateDone from './repeatDone.directive';
+
 // LIB non injectable
 import '../../../node_modules/animate.css/animate.css';
 import '../../../node_modules/font-awesome/scss/font-awesome.scss';
@@ -25,6 +28,7 @@ export default angular.module('app.core', [
   coreConstants,
   coreFilters,
   authInterceptor,
-  PostServiceModule
+  PostServiceModule,
+  repeateDone
 ])
 .name;
